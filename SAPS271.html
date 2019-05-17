@@ -13,7 +13,7 @@
             margin-right: 1cm;
             margin-top: 0.8cm;
             margin-bottom: 0.8cm;
-            font-family: Arial;
+            font-family: Arial, Helvetica, sans-serif;
             
             @top-right {
                 font-size: 9px;
@@ -31,7 +31,7 @@
             }
         }
         body {
-            font-family: Arial;
+            font-family: Arial, Helvetica, sans-serif;
         }
         table {
             border-collapse: collapse;
@@ -297,11 +297,29 @@
                 <td class="super borderless collapse-td">1.1</td>
                 <td class="borderless strong">Action</td>
                 <td class="gray-background">Semi-automatic</td>
-                <td></td>
+                <td class="center">
+                    <span style="font-size:14px;">
+                        {% if firearm.action_type == "Semi-Automatic" %}
+                            X
+                        {% endif %}
+                    </span>
+                </td>
                 <td class="gray-background">Automatic</td>
-                <td></td>
+                <td class="center">
+                    <span style="font-size:14px;">
+                        {% if firearm.action_type == "Automatic" %}
+                            X
+                        {% endif %}
+                    </span>
+                </td>
                 <td class="gray-background">Manual</td>
-                <td></td>
+                <td class="center">
+                    <span style="font-size:14px;">
+                        {% if firearm.action_type == "Manual" %}
+                            X
+                        {% endif %}
+                    </span>
+                </td>
             </tr>
             <tr>
                 <td class="borderless collapse-td"></td>
@@ -315,7 +333,7 @@
             <tr>
                 <td class="super borderless collapse-td">1.2</td>
                 <td class="gray-background" style="width:220px;">Names and addresses engraved in the metal</td>
-                <td colspan="4"></td>
+                <td colspan="4"><span style="font-size:14px;">{{ firearm.engraved_info }}</span></td>
             </tr>
             <tr>
                 <td class="collpase-td borderless collapse-td"></td>
@@ -375,6 +393,43 @@
             <tr>
                 <td class="borderless-right collapse-td">F.</td>
                 <td class="center borderless-left">PARTICULARS OF CURRENT OWNER</td>
+            </tr>
+        </table>
+        <br>
+        <table>
+            <tr>
+                <td class="super borderless collapse-td">1</td>
+                <td class="body-text strong">Type of owner <span class="italic body-text-light">(Indicate with an X)</span></td>
+            </tr>
+        </table>
+        <br>
+        <table class="fullwidth-column center body-text">
+            <tr>
+                <td class="super borderless collapse-td">1.2</td>
+                <td class="gray-background">A <br> Private owner</td>
+                <td></td>
+                <td class="gray-background"> B <br> Firearm dealer</td>
+                <td></td>
+                <td class="gray-background">C <br> Company</td>
+                <td></td>
+                <td class="gray-background">D <br> Imported firearm</td>
+                <td></td>
+                <td class="gray-background">E <br> Estate</td>
+                <td></td>
+            </tr>
+        </table>
+        <br>
+        <table>
+            <tr>
+                <td class="super borderless collapse-td">2</td>
+                <td class="heading">NATURAL PERSON'S DETAILS</td>
+            </tr>
+        </table>
+        <br>
+        <table>
+            <tr>
+                <td class="super borderless collapse-td">3</td>
+                <td class="heading">TYPE A <span class="body-text-light">(Private Owner)</span></td>
             </tr>
         </table>
     </body>
